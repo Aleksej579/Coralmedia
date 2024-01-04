@@ -1,0 +1,475 @@
+/*--- npm run scss ---*/
+/*---удаление (добавить файл) ---*/
+#field_1_4_4, 
+#field_1_4_44,
+#main-footer .e-news-wrap, 
+#main-footer .footer-tag-line {
+    display: none;
+}
+
+#sticky-nav .text-logo {padding: 5px 0;}
+#sticky-nav .text-logo img {
+    width: 55px;
+    height: auto;
+    margin-left: 20px;
+}
+
+@media(min-width: 1200px) {
+    .nav li.nav-logo {
+        width: 350px;
+        text-align: left;
+    }
+    .nav li {margin-left: 2rem;}
+}
+
+/*--- main logotype eng ---*/
+.nav-logo img {width: 125px;}
+@media(max-width: 767px) {.nav-logo img {width: 110px;}}
+
+/*--- Turn the device over ---*/
+.rotate {display: none;}
+@media(min-width: 480px) and (max-width: 767px) {
+    .rotate {
+        display: block;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: #05373a;
+        background-image: url(/images/circular.png);
+        z-index: 100;
+        background-size: 20%;
+        background-repeat: no-repeat;
+        background-position: 50% 25%;
+        text-align: center;
+        color:white;
+        font-size: 20px;
+        line-height: 100vh;
+    }
+}
+
+/*--- digist ---*/
+#contact .wrap-digit {transform: scale(0.7);}
+#contact .wrap-digit svg {font-family: sans-serif;}
+
+@media(max-width: 650px) {
+    #contact .wrap-digit {transform: scale(0.6);}
+    #contact .wrap-digit #num-year {top: 300px;}
+    #contact .wrap-digit #num-let {top: 530px;}
+}
+
+/*--- button callback ---*/
+#btn_msg_callback {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #45a39d;
+    background-image: url(/images/icon_msg.png);
+    position: absolute;
+    right: 50px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 45%;
+    cursor: pointer;
+    z-index: 3;
+    align-items: center;
+    display: flex;
+    z-index: 1001 !important;
+    bottom: 50px;
+    position: fixed;
+}
+/*--- close ---*/
+.cross_icon {
+    background-image: url(/images/close_icone.png) !important;
+    background-color: grey !important;
+    transition-duration: 1s;
+    position: fixed;
+}
+.pulse_1 {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: #45a39d;
+    opacity: 0;
+    z-index: 1000;
+    position: absolute;
+    right: 45px;
+    animation: pulse_1  3s infinite linear;
+    bottom: 45px;
+    position: fixed;
+}
+.pulse_2 {
+    height: 100px;
+    width: 100px;
+    border: 2px solid #45a39d;
+    border-radius: 50%;
+    opacity: 0;
+    z-index: 1000;
+    position: absolute;
+    right: 25px;
+    animation: pulse_2  3s infinite ease-out;
+    bottom: 25px;
+    position: fixed;
+}
+.cross_icon_pulse {
+    background-color: grey !important;
+    border: grey;
+    position: fixed;
+}
+@keyframes pulse_1 {
+    0% {opacity: 0;}
+    25% {opacity: 0.5;}
+}
+@keyframes pulse_2 {
+    25% {
+        opacity: 0;
+        transform: scale(0.5);
+        transform-origin: 50% 50%;
+    }
+    40% {
+        opacity: 0.3;
+    }
+}
+/*--- icon messenger ---*/
+.wrapp_icon_messenger {
+    height: 40px;
+    right: 100px;
+    position: absolute;
+    display: flex;
+}
+
+#tlgm, #fb {
+    height: 40px;
+    width: 40px;
+    margin-right: 20px;
+    border-radius: 50%;
+    display: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 60%;
+}
+#tlgm a, #fb a {
+    padding: 20px;
+    font-size: 0;
+}
+#tlgm a span, #fb a span {
+    position: absolute;
+    font-size: 13px;
+    color:#fff;
+    bottom: -30px;
+    display: none;
+    border-radius: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
+    width: 120px;
+    margin-left: -40px;
+}
+#tlgm:hover a span, #fb:hover a span {
+    display: block;
+}
+#tlgm {
+    background-image: url(/images/icon_telegramm.png);
+    background-color: #039be5;
+}
+#fb {
+    background-image: url(/images/icon_fb.png);
+    background-color: #3b5998;
+    margin-right: 0;
+}
+
+/*--- responsiv for button ---*/
+@media(max-width: 480px) {
+    #btn_msg_callback {
+        right: 25px;
+        position: fixed;
+    }
+    .pulse_1 {
+        right: 20px;
+        position: fixed;
+    }
+    .pulse_2 {
+        right: 0;
+        position: fixed;
+    }
+}
+@media(max-width: 400px) {
+    #btn_msg_callback {
+        right: 15px;
+        bottom: 35px;
+        position: fixed;
+    }
+    .pulse_1 {
+        right: 10px;
+        bottom: 30px;
+        position: fixed;
+    }
+    .pulse_2 {
+        right: -10px;
+        bottom: 10px;
+        position: fixed;
+    }
+    .wrapp_icon_messenger {
+        width: 50px;
+        height: 150px;
+        right: 0;
+        bottom: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+    #tlgm, #fb {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    #tlgm a span, #fb a span {
+        bottom: auto;
+        margin-left: -130px;
+        margin-top: -13px;
+    }
+}
+
+/*--- overlayer ---*/
+.overlayer {
+    height: 100%;
+    width: 100vw;
+    background-color: black;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: none;
+}
+.footer-content {z-index: auto;}
+
+/*--- form calback (main) ---*/
+#gform_wrapper_1 {
+    margin-top: -4px;
+}
+
+/*--- form calback (error) ---*/
+.help-block {margin-bottom: -15px;}
+.help-block .list-unstyled {
+    margin-top: 0;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+.help-block .list-unstyled li {
+    list-style-type: none;
+    color: red;
+    font-size: 10px;
+    font-family: "proxima_nova_ltlight",Arial,sans-serif;
+}
+/*--- form calback (2 row + 2 col) ---*/
+#contact-form_ .row_ {display: flex; margin-bottom: 15px;}
+#contact-form_ .col-md-6, #contact-form_ .col-md-12 {margin: 0 10px;}
+#contact-form_ .col-md-6 {width: 100%;}
+
+/*--- form calback (label) ---*/
+#contact-form_ label {
+    color: #4c9390;
+    font-family: nexa_rust_sans_black, helvetica, arial, sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+/*--- form calback (button:type[submit]) ---*/
+#contact-form_ .btn-write_to_us {
+    border: none;
+    color:#fff;
+    background:#4c9390;
+    display: inline-block;
+    font-size: 15px;
+    font-size: .9375rem;
+    padding: 15px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: normal;
+    font-family: nexa_rust_sans_black,helvetica,arial,sans-serif;
+    border-radius: 5px;
+    transition-property: background,color,border-color;
+    transition-duration: 0.5s;
+    margin-top: 40px;
+}
+#contact-form_ .btn-write_to_us:hover {
+    background: #fff !important;
+    color:#4c9390 !important;
+    transition-duration: 0.8s;
+}
+
+/*--- form input (border:focus/hover) ---*/
+#contact-form_ input:hover, 
+#contact-form_ textarea:hover {
+    box-shadow: inset 0px 0px 5px -1px #4c9390;
+    transition-duration: 0.3s;
+}
+#contact-form_ input:focus, 
+#contact-form_ textarea:focus {
+    border: 1px solid white;
+    transition-duration: 0.3s;
+}
+
+/*--- hide right sidebar (from Price) ---*/
+#growler {display: none;}
+
+.free_quote_menu_btn {
+    background-color:#4c9390;
+    border-radius: 5px;
+    height: 34px;
+    line-height: 34px !important;
+    padding: 0 15px !important;
+    margin: 12px;
+    text-align: center;
+    width: max-content;
+    margin: 0 auto;
+    margin-top: 8px;
+}
+.free_quote_menu_btn:hover {
+    background-color: white !important;
+    color: #4c9390 !important;
+}
+
+#free_quote_menu_btn_ {
+    background-color:#4c9390;
+    border-radius: 5px;
+    height: 34px;
+    line-height: 34px !important;
+    padding: 0 15px !important;
+    margin: 12px;
+    text-align: center;
+    width: max-content;
+    margin: 0 auto;
+    margin-top: 8px;
+}
+#free_quote_menu_btn_:hover {
+    background-color: white !important;
+    color: #4c9390 !important;
+}
+
+/*--- free quote ---*/
+.free_quote_menu_btn_main {
+    margin-top: -7px;
+    color: white;
+}
+
+/*--- icon ru (on black background) ---*/
+.social-media .lg.ru a, 
+.social-media  .lang-en  {
+    margin-top: 15px;
+}
+.social-media .lang.ru, 
+.social-media  .lang-en, 
+#main-nav .lang-en {
+    width: 20px;
+    height: 20px;
+}
+#main-nav .lg.en, 
+#main-nav .logo_fb_main {
+    margin-top: 2px;
+}
+
+/*--- icon ru (main menu) ---*/
+.l-region--header #main-nav .lang.ru {
+    line-height: 20px;
+    height: 20px;
+    margin-left: 0;
+}
+.l-region--header #main-nav .lang.ru a {
+    line-height: 20px;
+    height: 20px;
+}
+.l-region--header #main-nav .lang {
+    width: 20px;
+}
+.l-region--header #main-nav .logo_fb_main {
+    height: 20px;
+    margin-left: 5px;
+}
+
+#mobile-navigation li:nth-child(7) {border: none;}
+#mobile-navigation_multilevelpushmenu .social-media .lg.ru a {
+    margin-left: 0;
+    padding-bottom: 0;
+    margin-top: 21px;
+}
+
+#mobile-navigation_multilevelpushmenu .mobile-nav .free_quote_menu_btn {
+    transform: scale(1.3);
+}
+
+
+/*--- footer ---*/
+.ratings_stars {
+    transform: scale(0.4);
+    margin-bottom: -7px;
+}
+.home-bread li {display: inline;}
+.home-bread li.last-item {text-transform: lowercase;}
+.copy-right {padding-top: 0;}
+.ratings {padding-bottom: 0; padding-top: 0;}
+.total_votes {padding: 0;}
+.main-text-botom {display: none;}
+#breadcrumb-footer {margin-bottom: -10px;}
+.main-footer {
+    padding-bottom: 10px;
+}
+
+/*--- digist ---*/
+@media(min-width: 651px) and (max-width: 1024px) {
+    .wrap-digit #num-year, 
+    .wrap-digit #num-success, 
+    .wrap-digit #num-let {
+        top: 100px;
+    }
+    .wrap-digit #num-year {left: -50px;}
+    .wrap-digit #num-let {right: -50px;}
+}
+
+@media(max-width: 767px) {
+    #sticky-nav .text-logo img {width: 48px;}
+    .l-region--header #main-nav .nav-logo img {
+        width: 80px;
+        margin-left: 20px;
+    }
+    .l-region--header #main-nav {text-align: left;}
+    #out-reviews .board {min-height: 900px;}
+    .contact-info-handler .list-header {font-size: 18px;}
+    .contact-info-handler ul li {font-size: 15px !important;}
+    .contact-info-handler {margin-top: 70px;}
+    #main-footer .copy-right {padding: 0;}
+    #main-footer .main-text-botom {display: none;}
+    .mobile-nav .social-media  .lang-en  {margin-top: 22px;}
+}
+
+
+@media(max-width: 360px) {
+    #beer-line-up .carousel-wrap .owl-stage-outer .owl-stage {
+        display: flex;
+        flex-direction: column;
+    }
+    #beer-line-up .carousel-wrap .owl-nav {display: none;}
+    #out-reviews .board {min-height: 600px;}
+    .board .gallery-handler {margin-top: 0;}
+    .board .gallery-title {padding-top: 0;}
+
+    // .footer-content #breadcrumb-footer, 
+    .footer-content .copy-right {margin-bottom: -10px;}
+}
+
+/*--- telephone skype ... ---*/
+.contact-info li {display: flex;}
+.list-header_lowercase {
+    text-transform: lowercase !important;
+    display: block;
+    width: 80px;
+}
+
+
+@media(max-width: 767px) {
+    .list-header_lowercase {
+        width: 100px;
+    }
+}
+
